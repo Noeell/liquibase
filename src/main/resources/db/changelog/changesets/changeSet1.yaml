@@ -21,3 +21,6 @@ databaseChangeLog:
               - column:
                   name: text
                   type: varchar(255)
+      rollback:
+        - dropTable:
+            tableName: article

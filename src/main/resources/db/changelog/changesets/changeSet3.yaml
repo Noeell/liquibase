@@ -9,3 +9,8 @@ databaseChangeLog:
               newTableName: articles
               oldTableName: article
               schemaName: public
+        rollback:
+            - renameTable:
+                  newTableName: article
+                  oldTableName: articles
+                  schemaName: public

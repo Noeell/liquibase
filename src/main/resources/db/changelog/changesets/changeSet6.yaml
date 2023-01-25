@@ -17,3 +17,7 @@ databaseChangeLog:
         - sqlCheck:
             expectedResult: 0
             sql: select count(*) from DATABASECHANGELOGLOCK
+      rollback:
+        - dropIndex:
+            indexName: title_index
+            tableName: articles

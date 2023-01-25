@@ -29,3 +29,9 @@ databaseChangeLog:
                   onDelete: CASCADE
                   onUpdate: CASCADE
                   columnNames: article_name
+      rollback:
+        - dropTable:
+            tableName: category
+        - dropColumn:
+            tableName: articles
+            columnName: category

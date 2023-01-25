@@ -16,3 +16,10 @@ databaseChangeLog:
                   name: created
                   type: TIMESTAMP
                   defaultValue: ${NOW}
+      rollback:
+        - dropColumn:
+            columnName: version
+            tableName: articles
+        - dropColumn:
+            columnName: created
+            tableName: articles

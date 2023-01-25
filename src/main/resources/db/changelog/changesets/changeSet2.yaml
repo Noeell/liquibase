@@ -10,3 +10,9 @@ databaseChangeLog:
               newDataType: TEXT
               schemaName: public
               tableName: article
+        rollback:
+            - modifyDataType:
+                  columnName: text
+                  newDataType: varchar(255)
+                  schemaName: public
+                  tableName: article

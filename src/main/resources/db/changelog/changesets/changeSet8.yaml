@@ -38,6 +38,16 @@ databaseChangeLog:
               - column:
                   name: article_id
                   value: 70011fea-9bef-11ed-a8fc-0242ac120002
+      rollback:
+        - delete:
+            tableName: comment
+            where: "id = 1"
+        - delete:
+            tableName: category
+            where: "name = 'Sample Category'"
+        - delete:
+            tableName: articles
+            where: "id = '70011fea-9bef-11ed-a8fc-0242ac120002'"
 
 
 # docker run --rm --name postgres-liquibase-demo -p 5432:5432 -d -e POSTGRES_USER=localuser -e POSTGRES_PASSWORD=localpass -e POSTGRES_DB=localdb postgres:14.5

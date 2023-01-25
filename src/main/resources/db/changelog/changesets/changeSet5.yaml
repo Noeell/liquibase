@@ -23,3 +23,6 @@ databaseChangeLog:
                   onDelete: CASCADE
                   onUpdate: CASCADE
                   columnNames: article_id
+      rollback:
+        - dropTable:
+            tableName: comment
