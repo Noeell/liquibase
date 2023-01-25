@@ -1,0 +1,12 @@
+# Aufgabe 1
+databaseChangeLog:
+    - changeSet:
+        id: 2
+        author: Noel Gebhardt
+        comment: modify dataType text
+        changes:
+          - modifyDataType:
+              columnName: text
+              newDataType: TEXT
+              schemaName: public
+              tableName: article

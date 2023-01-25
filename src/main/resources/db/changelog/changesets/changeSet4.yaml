@@ -1,0 +1,18 @@
+# Aufgabe 3
+databaseChangeLog:
+  - changeSet:
+      author: Noel Gebhardt
+      id: 4
+      comment: add columns version and created to table articles
+      changes:
+        - addColumn:
+            tableName: articles
+            columns:
+              - column:
+                  name: version
+                  type: INT
+                  defaultValue: 1
+              - column:
+                  name: created
+                  type: TIMESTAMP
+                  defaultValue: ${NOW}

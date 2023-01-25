@@ -1,0 +1,31 @@
+# Aufgabe 6
+databaseChangeLog:
+  - changeSet:
+      author: Noel Gebhardt
+      id: 7
+      comment: create table category with foreign key on articles column name
+      changes:
+        - addColumn:
+            tableName: articles
+            columns:
+              - column:
+                  name: category
+                  type: int
+        - createTable:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: description
+                  type: varchar(255)
+            foreignKeys:
+              - foreignKey:
+                  foreignTableName: articles
+                  foreignColumnNames: name
+                  onDelete: CASCADE
+                  onUpdate: CASCADE
+                  columnNames: article_name

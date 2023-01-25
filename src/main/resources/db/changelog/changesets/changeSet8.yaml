@@ -1,0 +1,43 @@
+# Aufgabe 7
+databaseChangeLog:
+  - changeSet:
+      author: Noel Gebhardt
+      id: 8
+      comment: add some sample data to the tables
+      changes:
+        - insert:
+            tableName: articles
+            columns:
+              - column:
+                  name: id
+                  value: 70011fea-9bef-11ed-a8fc-0242ac120002
+              - column:
+                  name: title
+                  value: "Sample Article Title"
+              - column:
+                  name: text
+                  value: "This is some sample text for the article."
+              - column:
+                  name: category
+                  value: 1
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: name
+                  value: "Sample Category"
+              - column:
+                  name: description
+                  value: "Sample Description"
+        - insert:
+            tableName: comment
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: article_id
+                  value: 70011fea-9bef-11ed-a8fc-0242ac120002
+
+
+# docker run --rm --name postgres-liquibase-demo -p 5432:5432 -d -e POSTGRES_USER=localuser -e POSTGRES_PASSWORD=localpass -e POSTGRES_DB=localdb postgres:14.5

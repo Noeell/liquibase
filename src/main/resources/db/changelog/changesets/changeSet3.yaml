@@ -1,0 +1,11 @@
+# Aufgabe 2
+databaseChangeLog:
+    - changeSet:
+        author: Noel Gebhardt
+        id: 3
+        comment: rename table from article to articles
+        changes:
+          - renameTable:
+              newTableName: articles
+              oldTableName: article
+              schemaName: public

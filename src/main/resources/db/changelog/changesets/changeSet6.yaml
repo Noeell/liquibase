@@ -1,0 +1,19 @@
+# Aufgabe 5
+databaseChangeLog:
+  - changeSet:
+      author: Noel Gebhardt
+      id: 6
+      comment: create index table articles column title
+      changes:
+        - createIndex:
+            indexName: title_index
+            tableName: articles
+            columns:
+              - column:
+                  descending: true
+                  name: title
+      preConditions:
+        - onFail: WARN
+        - sqlCheck:
+            expectedResult: 0
+            sql: select count(*) from DATABASECHANGELOGLOCK
